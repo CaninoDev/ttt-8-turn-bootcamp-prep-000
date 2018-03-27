@@ -7,13 +7,9 @@ def display_board(board)
 end
 
 def valid_move?(board, index)
-  if index.between?(0, 8)
-
-			if !position_taken?(board, index)
-					return true
-			end
-
-	end
+  if index.between?(0, 8) && !position_taken?(board, index)
+    return true
+  end
 end
 
 def position_taken?(board, index)
@@ -24,10 +20,9 @@ def input_to_index(input)
 		index = input.to_i - 1
 		return index
 end
+
 def move(board, index, piece = "X")
-		if (valid_move?(board, index))
-				board[index] = piece
-		end
+  board[index] = piece
 end
 
 def turn(board)
